@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="http-equiv" content="ie-edge">
+    <link rel="stylesheet" href="../static/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+</head>
+<script src="../static/home.js"></script>
+<body>
+    <header>
+        <div>
+            <nav class="navbar" method="POST">
+                <h1 class="logo">Thyroid Disease Prediction Model</h1>
+            </nav>
+        </div>
+    </header>
+
+    <div class="info">
+        <span>&#8505;  Empty columns will be considered as 0 value. All empty columns may affect the result</span>
+    </div>
+
+    <div id="form-border">
+        <form action="{{ url_for('predict_datapoint')}}" method="post">
+
+            <div>
+                <label for="">Age value: </label>
+                <input type="text" id="age-value" name="age" placeholder="Enter numeric value"/>
+            </div>
+
+
+            <div>
+                <label for="">FTI value: </label>
+                <input type="text" id="fti-value" name="fti" placeholder="Enter numeric value"/>
+            </div>
+
+            <div>
+                <label for="">T3 value: </label>
+                <input type="text" id="t3-value" name="t3" placeholder="Enter numeric value"/>
+            </div>
+
+            <div>
+                <label for="">TSH value: </label>
+                <input type="text" id="tsh-value" name="tsh" placeholder="Enter numeric value"/>
+            </div>
+
+            <div>
+                <label for="">TT4 value: </label>
+                <input type="text" id="tt4-value" name="tt4" placeholder="Enter numeric value"/>
+            </div>
+
+            
+            <div class="submit-button">
+                <input type="submit" value="Submit"/>
+            </div>
+        </form>
+
+
+        <div class="prediction" id="prediction">
+            <h2>{{results}}</h2>
+        </div>
+    </div>
+    <footer><h4>&copy Model developed By Ravi Yadav</h4></footer>
+</body>
