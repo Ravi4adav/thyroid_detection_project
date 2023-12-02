@@ -12,15 +12,17 @@
 <script src="../static/home.js"></script>
 <body>
     <header>
-        <div>
-            <nav class="navbar" method="POST">
-                <h1 class="logo">Thyroid Disease Prediction Model</h1>
-            </nav>
+        <div class="navbar">
+            <h2 class="logo">Thyroid Disease Prediction Model</h2>
+            <div class="navlink">
+                <a href="/home">Home</a><hr>
+                <a href="/help">Help</a><hr>
+            </div>
         </div>
     </header>
 
     <div class="info">
-        <span>&#8505;  Empty columns will be considered as 0 value. All empty columns may affect the result</span>
+        <span>&#8505;  Please keep the value empty if any test value is not available.</span>
     </div>
 
     <div id="form-border">
@@ -48,7 +50,7 @@
             </div>
 
             <div>
-                <label for="">TT4 value: </label>
+                <label for="">T4 value: </label>
                 <input type="text" id="tt4-value" name="tt4" placeholder="Enter numeric value"/>
             </div>
 

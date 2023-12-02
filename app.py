@@ -10,10 +10,10 @@ app=application
 
 ## Route for a home page
 
-@app.route('/')
+@app.route('/help')
 
 def index():
-    return render_template('index.html')
+    return render_template('help.html')
 
 
 @app.route('/home',methods=['GET','POST'])

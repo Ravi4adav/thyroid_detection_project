@@ -67,23 +67,50 @@ div .submit-button input:hover{
     background-color:  rgb(212, 209, 209);
 }
 
-header .navbar{
+.navbar{
     background-color: rgb(35 47 70);
+    display: flex;
     padding: 1vmax;
     color: #fbf7f2;
     border-style: outset;
     border-radius: 5px;
     position: static;
+    width:98%;
+    
 }
 
-.navbar .logo{
-    font-size: large;
+.logo{
     display: flex;
     justify-content: center;
     text-align: center;
-    font-size: 35px;
     margin:0px;
 }
+
+.navlink{
+    display:flex;
+    justify-content: left;
+    text-align: center;
+    float: left;
+    
+}
+
+.navlink a{
+    font-weight: 700;
+    margin: 9% 10% 0% 20%;
+    /* float: left; */
+    color: #fbf7f2;
+    text-decoration: none;
+    justify-content: left;
+    text-align: center;
+}
+
+@media only screen and (max-width: 500px){
+    .navlink{
+        display:flex;
+        flex-direction: column;
+    }
+}
+
 
 
 div .prediction{
