@@ -35,8 +35,7 @@ class PredictPipeline:
 
 
 class CustomData:
-    def __init__(self,age:str,fti: str,t3: str,tsh: str,tt4: str):
-        self.age=age
+    def __init__(self,fti: str,t3: str,tsh: str,tt4: str):
         self.fti=fti
         self.t3=t3
         self.tsh=tsh
@@ -45,7 +44,6 @@ class CustomData:
     def get_data_as_data_frame(self):
         try:
             custom_data_input_dict={
-                'age':[self.age],
                 'fti':[self.fti],
                 't3':[self.t3],
                 'tsh':[self.tsh],

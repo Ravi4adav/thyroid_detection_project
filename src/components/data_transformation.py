@@ -33,16 +33,15 @@ class DataImputation:
     def num_impute(self,data):
         try:
             logging.info("Initiating imputation process of numeric data")
-            self.num_features=[features for features in self.data.columns if self.data[features].dtypes!='object']
             self.data=data
+            self.num_features=[features for features in self.data.columns if self.data[features].dtypes!='object']
             for features in self.num_features:
                 if self.data[features].isnull().sum() == self.data[features].shape[0]:
                     self.data.drop([features],axis=1,inplace=True)
                     self.num_features.remove(features)
-            self.knn_instance=KNNImputer()
-            self.imp_val=self.knn_instance.fit_transform(self.data[self.num_features])
 
-            self.data[self.num_features]=self.imp_val
+            self.data[self.num_features]=self.data[self.num_features].fillna(0)
+
             logging.info('Imputation of numeric features done successfully')
             return self.data
         except Exception as e:
@@ -223,7 +222,9 @@ class InitiateDataTransformation:
 
 # if __name__=="__main__":
 #     di=InitiateDataTransformation()
+#     pd.set_option('display.max_columns',None)
 #     train_data=pd.read_csv('./artifacts/train.csv')
 #     test_data=pd.read_csv('./artifacts/test.csv')
 #     x,y,x_test,y_test=di.get_transformed_data(train_data,test_data)
 #     print(x,y)
+    

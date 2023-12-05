@@ -23,7 +23,6 @@ def predict_datapoint():
     
     else:
         data=CustomData(
-            age=(request.form.get('age')),
             fti=(request.form.get('fti')),
             t3=(request.form.get('t3')),
             tsh=(request.form.get('tsh')),

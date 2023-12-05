@@ -69,7 +69,7 @@ def load_object(file_path):
 
 # function for feature selection
 def best_feature(df,target_data):
-    best_feature=SelectKBest(mutual_info_classif,k=5)
+    best_feature=SelectKBest(mutual_info_classif,k=4)
     best_feature.fit(df,target_data)
     feature_names=df.columns[best_feature.get_support()]
     return feature_names
